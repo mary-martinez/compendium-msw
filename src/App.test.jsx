@@ -66,13 +66,7 @@ describe('App should render a searchable list of pokemon', () => {
     // const images2 = await screen.findAllByRole('img', {timeout: 5000});
     // expect(images2.length).toEqual(1);
     await waitForElementToBeRemoved(await screen.findByText(/venusaur/i), { timeout: 5000 });
-    // waitFor(() => {
-      
-    //   screen.debug();
-
-    // }, {timeout: 5000})
-    // const results = await screen.findAllByRole('img', {timeout: 5000});
-    // expect(results.length).toEqual(1);
+    
     
   })
 
