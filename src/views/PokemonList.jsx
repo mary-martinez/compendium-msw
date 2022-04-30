@@ -12,17 +12,18 @@ export default function PokemonList() {
   
   useEffect(() => {
     try {
-    const fetchData = async() => {
-      const data = await fetchPokemon();
-      setPokemon(data);
-      setLoading(false);
-    }
+      const fetchData = async() => {
+        const data = await fetchPokemon();
+        console.log('msw data', data);
+        setPokemon(data);
+        setLoading(false);
+      }
     fetchData();
-  } catch(e) {
-    setError(e.message);
-  }
-}, [])
-console.log(pokemon);
+    } catch(e) {
+      setError(e.message);
+    }
+  }, [])
+
 
   const handleSearch = async(search) => {
     if (search.length === 0) {
