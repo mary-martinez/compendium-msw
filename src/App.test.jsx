@@ -33,7 +33,6 @@ const server = setupServer(
   // }),
   rest.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex`, (req, res, ctx) => {
     const search = req.url.searchParams.get('pokemon');
-    console.log('search from mocked request', search);
     if (!!search) {
       return res(ctx.json(mockSearchedPokemon))
     } else {
@@ -54,7 +53,7 @@ describe('App should render a searchable list of pokemon', () => {
     const heading = screen.getByText(/world/i);
 
     const name = await screen.findByText(/butterfree/i);
-    const images = await screen.findAllByRole('img', {timeout: 5000});
+    const images = await screen.findAllByRole('img', {timeout: 2000});
     expect(images.length).toEqual(2);
 
     // await waitForElementToBeRemoved(await screen.findByText('Loading...'), { timeout: 5000 });
@@ -65,7 +64,7 @@ describe('App should render a searchable list of pokemon', () => {
     expect(searchBar.value).toBe('b');
     // const images2 = await screen.findAllByRole('img', {timeout: 5000});
     // expect(images2.length).toEqual(1);
-    await waitForElementToBeRemoved(await screen.findByText(/venusaur/i), { timeout: 5000 });
+    await waitForElementToBeRemoved(await screen.findByText(/venusaur/i), { timeout: 2000 });
     
     
   })

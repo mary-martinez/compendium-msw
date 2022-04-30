@@ -14,7 +14,6 @@ export default function PokemonList() {
     try {
       const fetchData = async() => {
         const data = await fetchPokemon();
-        console.log('msw data', data);
         setPokemon(data);
         setLoading(false);
       }
@@ -22,7 +21,7 @@ export default function PokemonList() {
     } catch(e) {
       setError(e.message);
     }
-  }, [])
+  }, []) 
 
 
   const handleSearch = async(search) => {
