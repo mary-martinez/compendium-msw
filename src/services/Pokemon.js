@@ -9,6 +9,5 @@ export async function fetchPokemonBySearch(search) {
   params.set('pokemon', search);
   const resp = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?${params.toString()}`);
   const data = await resp.json();
-  console.log('testing sucks', data);
   return (data.results);
 }
